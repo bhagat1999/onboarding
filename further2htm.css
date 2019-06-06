@@ -1,0 +1,26 @@
+body{
+    margin-left:0%;
+}
+.h3style{
+  color:#414141;
+  background-color:lightgrey;
+}
+.labelstyle{
+  color:#738598;
+}
+.formstyle{
+  margin-left:-10%;
+  width:110%;
+}
+.buttonstyle{
+  margin-left:75%;
+  background-color:#e83e6c;
+  border: transparent;
+  width:20%;
+}
+.cardstyle{
+  margin-top: 10%;
+}
+.istyle{
+  color:lightgrey;
+}
