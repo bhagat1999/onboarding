@@ -2,47 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="pen.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   </head>
   <body>
     <!-- multistep form -->
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <!-- Brand -->
-      <a class="navbar-brand" href="#">Logo</a>
-
-      <!-- Links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link 2</a>
-        </li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <br>
-
 <form id="msform">
   <!-- progressbar -->
   <ul id="progressbar">
@@ -142,11 +110,30 @@
     <h3 class="h3style">Employment Details</h3>
 
     <label class="labelstyle">Are you currently employed?</label>
-    <button type="submit" class=" action-button" onclick="openemploy()">Yes</button>
+    <!-- <button type="submit" class=" action-button" onclick="openemploy()">Yes</button> -->
     <button type="submit" class=" next action-button">No</button>
+    <label class="labelstyle" >City</label>
+        <input class="form-control form-control-default" id="city" type="text" name="city" required="" placeholder="Banglore" autocomplete="off" />
 
-  <span className="splash-container" id="addemploy"></span>
+    <label class="labelstyle labelmargin">State</label>
+        <input class="form-control form-control-default formstyle" id="state"  type="text" name="state" required="" placeholder="Karnataka" autocomplete="off" />
+
+
+
+    <textarea class="form-control form-control-default" id="text" rows="4" column="50" type="text" name="address" required="true" placeholder="Permanent Address" autocomplete="off" >
+      </textarea>
+
+
+    <label class="labelstyle" style="margin-top:4%" >Pincode</label>
+        <input class="form-control form-control-default" id="pincode" type="text" name="pincode" required="" placeholder="12345678" autocomplete="off" />
+
+    <label class="labelstyle" style="margin-top:4%" >Nationality</label>
+        <input class="form-control form-control-default formstyle" id="nationality" type="text" name="Indian" required="true" placeholder="Nationality" autocomplete="off" />
+
+  <button type="submit" class=" next action-button">Continue</button>
+  <!-- <div class="splash-container" id="addemploy"></div> -->
   </fieldset>
+
 
   <fieldset>
     <h3 class="h3style">Profiling</h3>
@@ -183,41 +170,18 @@
      <button type="submit" class="btn btn-primary buttonstyle next action-button">Next</button>
   </fieldset>
 </form>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
   </body>
   <script>
 
 
-  function openemploy(){
-    console.log("inside");
-    document.getElementById("addemploy").innerHTML=`
-
-    <label class="labelstyle" >City</label>
-        <input class="form-control form-control-default" id="city" type="text" name="city" required="" placeholder="Banglore" autocomplete="off" />
-
-    <label class="labelstyle labelmargin">State</label>
-        <input class="form-control form-control-default formstyle" id="state"  type="text" name="state" required="" placeholder="Karnataka" autocomplete="off" />
-
-
-
-    <textarea class="form-control form-control-default" id="text" rows="4" column="50" type="text" name="address" required="true" placeholder="Permanent Address" autocomplete="off" >
-      </textarea>
-
-
-    <label class="labelstyle" style="margin-top:4%" >Pincode</label>
-        <input class="form-control form-control-default" id="pincode" type="text" name="pincode" required="" placeholder="12345678" autocomplete="off" />
-
-    <label class="labelstyle" style="margin-top:4%" >Nationality</label>
-        <input class="form-control form-control-default formstyle" id="nationality" type="text" name="Indian" required="true" placeholder="Nationality" autocomplete="off" />
-
-  <button type="submit" class="btn btn-primary btnstyle next action-button">Continue</button>
-`
-  }
+//   function openemploy(){
+//     console.log("inside");
+//     document.getElementById("addemploy").innerHTML=`
+//
+//
+//
+// `
+//   }
   </script>
 
   <script>
