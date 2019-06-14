@@ -24,18 +24,20 @@
   <fieldset>
     <h2 class="fs-title h3style">Personal Info</h2>
     <label class="labelstyle" >Date of Birth</label>
-        <input class="form-control form-control-default" type="text" name="dob" required="true" placeholder="MM/DD/YY" autocomplete="off" />
+        <input class="form-control form-control-default" type="text" name="dob" id="dob" onchange="func1()" required="true" placeholder="MM/DD/YY" autocomplete="off" />
     <label class="labelstyle" >City</label>
-        <input class="form-control form-control-default" type="text" name="city" required="" placeholder="Banglore" autocomplete="off" />
+        <input class="form-control form-control-default" type="text" name="city" id="city" onchange="func2()" required="true" placeholder="Banglore" autocomplete="off" />
     <label class="labelstyle" >State</label>
-        <input class="form-control form-control-default" type="text" name="state" required="" placeholder="Karnataka" autocomplete="off" />
-    <textarea class="form-control form-control-default" rows="4" column="50" type="text" name="address" required="true" placeholder="Permanent Address" autocomplete="off" >
+        <input class="form-control form-control-default" type="text" name="state" id="state" onchange="func3()" required="true" placeholder="Karnataka" autocomplete="off" />
+          <label class="labelstyle" >Address</label>
+    <textarea class="form-control form-control-default" rows="4" column="50" type="text" onchange="func4()" name="address" id="address" required="true" placeholder="Permanent Address" autocomplete="off" >
     </textarea>
     <label class="labelstyle" >Pincode</label>
-        <input class="form-control form-control-default" type="text" name="pincode" required="" placeholder="12345678" autocomplete="off" />
+        <input class="form-control form-control-default" type="text" name="pincode" id="pincode" onchange="func5()"required="true" placeholder="12345678" autocomplete="off" />
     <label class="labelstyle" >Nationality</label>
-        <input class="form-control form-control-default formstyle" type="text" name="Indian" required="true" placeholder="Nationality" autocomplete="off" />
-    <button type="submit" class="btn btn-primary btnstyle next action-button" >Continue</button>
+        <input class="form-control form-control-default formstyle" type="text" name="Indian" id="nationality" onchange="func6()" required="true" placeholder="Nationality" autocomplete="off"  />
+
+    <button type="submit" disabled class=" next action-button" id="first" >Continue</button>
   </fieldset>
 
 
@@ -104,6 +106,7 @@
            <option>2024</option>
            <option>2025</option>
  </select>
+   <button type="submit" class="btn btn-primary btnstyle previous action-button" >prev</button>
        <button type="submit" class="btn btn-primary buttonstyle next action-button">Next</button>
   </fieldset>
   <fieldset>
@@ -129,7 +132,7 @@
 
     <label class="labelstyle" style="margin-top:4%" >Nationality</label>
         <input class="form-control form-control-default formstyle" id="nationality" type="text" name="Indian" required="true" placeholder="Nationality" autocomplete="off" />
-
+        <button type="submit" class="btn btn-primary btnstyle previous action-button" >prev</button>
   <button type="submit" class=" next action-button">Continue</button>
   <!-- <div class="splash-container" id="addemploy"></div> -->
   </fieldset>
@@ -154,6 +157,7 @@
          <input class="form-control form-control-default" type="text" name="codeforces" required="" placeholder="Codeforces profile" />
 
          <textarea class="form-control form-control-default" type="text" name="Others" required="" placeholder="Others" ></textarea>
+         <button type="submit" class="btn btn-primary btnstyle previous action-button" >prev</button>
    <button type="submit" class="btn btn-primary buttonstyle next action-button">Next</button>
   </fieldset>
 
@@ -167,24 +171,90 @@
            <textarea class="form-control form-control-default" type="text" name="" required="true" placeholder="" ></textarea>
            <font class="labelstyle">Why do you want to join CodeAsylums?*</font>
            <textarea class="form-control form-control-default" type="text" name="" required="true" placeholder="" ></textarea>
+           <button type="submit" class="btn btn-primary btnstyle previous action-button" >prev</button>
      <button type="submit" class="btn btn-primary buttonstyle next action-button">Next</button>
   </fieldset>
 </form>
   </body>
-  <script>
 
-
-//   function openemploy(){
-//     console.log("inside");
-//     document.getElementById("addemploy").innerHTML=`
-//
-//
-//
-// `
-//   }
-  </script>
 
   <script>
+  let c=0;
+  function func1(){
+
+  if(document.getElementById("dob").value!='')
+  c++;
+  if(c==6)
+    disable();
+  }
+  function func2(){
+  if(document.getElementById("city").value!='')
+  c++;
+  if(c==6)
+    disable();
+  }
+  function func3(){
+  if(document.getElementById("state").value!='')
+  c++;
+  if(c==6)
+    disable();
+  }
+  function func4(){
+  if(document.getElementById("address").value!='')
+  c++;
+  if(c==6)
+    disable();
+  }
+  function func5(){
+  if(document.getElementById("pincode").value!='')
+  c++;
+  if(c==6)
+    disable();
+  }
+  function func6(){
+  if(document.getElementById("nationality").value!='')
+  c++;
+  if(c==6)
+    disable();
+  }
+
+  function disable(){
+    let d=0;
+    if(document.getElementById("dob").value!='')
+    d++;
+    if(document.getElementById("city").value!='')
+    d++;
+    if(document.getElementById("state").value!='')
+    d++;
+    if(document.getElementById("address").value!='')
+    d++;
+    if(document.getElementById("pincode").value!='')
+    d++;
+    if(document.getElementById("nationality").value!='')
+    d++;
+    if(d==6)
+
+    document.getElementById('first').disabled=false;
+    else{
+      document.getElementById('first').disabled=true;
+      c=0;
+      d=0;
+      document.getElementById("dob").value='';
+      document.getElementById("city").value='';
+      document.getElementById("state").value='';
+      document.getElementById("address").value='';
+      document.getElementById("pincode").value='';
+      document.getElementById("nationality").value='';
+
+
+
+    }
+
+
+  }
+
+
+
     var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
